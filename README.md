@@ -28,7 +28,7 @@ Then, using the '+create application' button in the upper right, two apps need t
   * Single Web Page Application 
   * Machine to Machine Application
   
-The single web page application handles the login and whitelist for the actual front end in our project. This is where the data we will obtain will be viewed by the user. A quickstart guide to a React Auth0 app can be found [here](https://auth0.com/docs/quickstart/spa/react). Don't forget to configure the callback URLs and logout URLs to contain 'http://localhost:3000'. Otherwise, the React app won't be able to access the Auth0 login app while running on your local machine. 
+The single web page application handles the login and whitelist for the actual front end in our project. This is where the data we will obtain will be viewed by the user. A quickstart guide to a React Auth0 app can be found [here](https://auth0.com/docs/quickstart/spa/react). Don't forget to configure the callback URLs and logout URLs to contain 'http://localhost:3000' and 'http://localhost:3000/rules. Otherwise, the React app won't be able to access the Auth0 login app while running on your local machine. 
 
 The machine to machine application is for handling access to your account's management API. Basically, we need an access token to access routes on the management API. The management API needs to verify our identity to allow this. One way is for us to manually get an access token from our dashboard on the Auth0 site, which can be used for testing. However, in production applications it is best to set up a machine to machine app, then access it securely from your own app.
 
