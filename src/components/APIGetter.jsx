@@ -11,7 +11,7 @@ export default function RulesGetter() {
   // then use api token to get rules from management api v2
   useEffect(() => {
     initialize()
-  }, [initialize])
+  }, [])
 
   async function initialize() {
     try {
