@@ -49,11 +49,11 @@ Normally it is a better practice to use environment variables instead of hard co
 
 All the following info can be found in your dashboard > applications > select one of your applications. Fill them in as follows: 
 
-  * REACT_APP_AUTH0_DOMAIN=<Auth0 domain for your account>
-  * REACT_APP_AUTH0_CLIENTID=<client id of your single web page application>
+  * REACT_APP_AUTH0_DOMAIN=Auth0 domain for your account
+  * REACT_APP_AUTH0_CLIENTID=client id of your single web page application
 
-  * REACT_APP_AUTH0API_CLIENTID=<client id of your machine to machine application>
-  * REACT_APP_AUTH0API_CLIENTSECRET=<client secret of your machine to machine application>
+  * REACT_APP_AUTH0API_CLIENTID=client id of your machine to machine application
+  * REACT_APP_AUTH0API_CLIENTSECRET=client secret of your machine to machine application
 
 
 
