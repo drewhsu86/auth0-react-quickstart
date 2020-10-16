@@ -4,6 +4,7 @@ import axios from 'axios'
 export default function RulesGetter() {
 
   const [ruleList, setRuleList] = useState([]);
+  const [appList, setAppList] = useState([]);
   const [errorText, setErrorText] = useState('');
 
   // if this component is successfully called, use m2m app to get api token
@@ -16,9 +17,15 @@ export default function RulesGetter() {
     try {
       const accessToken = await getAPIToken()
       setErrorText('Successfully received API JWT')
-      const rules = await getRules(accessToken)
-      setErrorText('Finished Initilization')
+
+      const rules = await getFromAPI(accessToken, 'rules')
+      setErrorText('Finished getting rules')
       setRuleList(rules)
+
+      const apps = await getFromAPI(accessToken, 'clients')
+      setErrorText('Finished getting apps')
+      setAppList(apps)
+
     } catch (error) {
       console.error(error)
     }
@@ -47,12 +54,12 @@ export default function RulesGetter() {
     }
   }
 
-  async function getRules(accessToken) {
+  async function getFromAPI(accessToken, path) {
     try {
       const headers = {
         Authorization: 'Bearer ' + accessToken
       }
-      const URL = `https://${process.env.REACT_APP_AUTH0_DOMAIN}/api/v2/rules`
+      const URL = `https://${process.env.REACT_APP_AUTH0_DOMAIN}/api/v2/${path}`
       const response = await axios(URL, { headers })
       console.log(response.data)
       return response.data
@@ -64,17 +71,25 @@ export default function RulesGetter() {
   
   return (
     <div>
-      RulesGetter
       {errorText ? <h3>{errorText}</h3> : null}
+
+      <h1>Apps List:</h1>
+      {
+        appList.map((app, idx) => {
+          return <div key={idx} style={{ border: "1px solid black", padding: "10px", margin: "0 20%" }}>
+            <h2> {app.name} </h2>  
+          </div>
+        })
+      }
 
       <h1>Rules List:</h1>
       {
         ruleList.map(rule => {
-          return <div key={rule.id} style={{ border: "1px solid black", padding: "10px" }}>
+          return <div key={rule.id} style={{ border: "1px solid black", padding: "10px", margin: "0 20%" }}>
             <h2> {rule.name} </h2>
             <p>Order: {rule.order}</p>
             <p>Stage: {rule.stage}</p>
-            <p style={{ overflow: "auto", backgroundColor: "gray", width: "80%", maxHeight: "200px", margin: "auto", padding: "5px" }}>
+            <p style={{ overflow: "auto", backgroundColor: "lightgray", width: "80%", maxHeight: "200px", margin: "auto", padding: "5px" }}>
               {rule.script}
             </p>
           </div>

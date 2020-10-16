@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
-import RulesGetter from './RulesGetter'
+import APIGetter from './APIGetter'
 
 export default function RulesViewer() {
   const { user, isAuthenticated, isLoading } = useAuth0()
@@ -22,7 +22,7 @@ export default function RulesViewer() {
   return (
     <div>
       <h1>Logged in as {user.email}.</h1>
-      <RulesGetter />
+      <APIGetter />
     </div>
   )
 }

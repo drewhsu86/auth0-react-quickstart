@@ -4,7 +4,7 @@ import './App.css'
 import Login from './components/Login'
 import Logout from './components/Logout'
 import LoginStatus from './components/LoginStatus'
-import RulesViewer from './components/RulesViewer'
+import Viewer from './components/Viewer'
 
 function App() {
   return <div className="App">
@@ -16,7 +16,7 @@ function App() {
       </div>
     </Route>
     <Route path="/rules">
-      <RulesViewer />
+      <Viewer />
     </Route>
   </div>
 }
