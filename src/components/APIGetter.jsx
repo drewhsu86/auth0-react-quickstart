@@ -19,11 +19,9 @@ export default function RulesGetter() {
       setErrorText('Successfully received API JWT')
 
       const rules = await getFromAPI(accessToken, 'rules')
-      setErrorText('Finished getting rules')
       setRuleList(rules)
 
       const apps = await getFromAPI(accessToken, 'clients')
-      setErrorText('Finished getting apps')
       setAppList(apps)
 
     } catch (error) {
@@ -89,7 +87,7 @@ export default function RulesGetter() {
             <h2> {rule.name} </h2>
             <p>Order: {rule.order}</p>
             <p>Stage: {rule.stage}</p>
-            <p style={{ overflow: "auto", backgroundColor: "lightgray", width: "80%", maxHeight: "200px", margin: "auto", padding: "5px" }}>
+            <p style={{ overflow: "auto", backgroundColor: "lightgray", width: "80%", height: "100px", margin: "auto", padding: "5px" }}>
               {rule.script}
             </p>
           </div>
