@@ -1,4 +1,4 @@
-# How to view all the Apps and Rules on your Auth0 account
+# Viewer for Apps and Rules on your Auth0 account
 
 This React app implements Auth0's authentication system to allow only users on a whitelist to log in. The users who have logged in will then see a list of the apps and rules active on this particular Auth0 account. By filtering and manipulating the data, large sets of rules and applications may be sorted or visualized to help developers manage or maintain their Auth0 implementations.
 
@@ -18,7 +18,7 @@ To run this on your local machine, Auth0 account information, such as clientIDs,
 
 #### NPM Packages
 
-After cloning or downloading this repo, go to the client folder and run 'npm install' or 'npm i'.  
+After cloning or downloading this repo, run 'npm install' or 'npm i'.  
 
 #### Required Apps 
 
