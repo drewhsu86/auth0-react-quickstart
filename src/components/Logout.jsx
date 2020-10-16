@@ -5,6 +5,6 @@ export default function Logout() {
   const { logout } = useAuth0()
 
   return (
-    <button onClick={() => logout({ returnTo: 'http://localhost:3000' })}> Log Out </button>
+    <button onClick={() => logout({ returnTo: process.env.NODE_ENV === "production" ? "https://auth0-rules-test-ahsu.netlify.app" : "http://localhost:3000" })}> Log Out </button>
   )
 }

@@ -10,7 +10,7 @@ ReactDOM.render(
   <Auth0Provider
     domain={process.env.REACT_APP_AUTH0_DOMAIN}
     clientId={process.env.REACT_APP_AUTH0_CLIENTID}
-    redirectUri={process.env.NODE_ENV === "production" ? "https://auth0-rules-test-ahsu.surge.sh" : "http://localhost:3000/rules"}
+    redirectUri={process.env.NODE_ENV === "production" ? "https://auth0-rules-test-ahsu.netlify.app/rules" : "http://localhost:3000/rules"}
   >
     <BrowserRouter>
       <App />
