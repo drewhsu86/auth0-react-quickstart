@@ -2,6 +2,16 @@
 
 This React app implements Auth0's authentication system to allow only users on a whitelist to log in. The users who have logged in will then see a list of the apps and rules active on this particular Auth0 account. By filtering and manipulating the data, large sets of rules and applications may be sorted or visualized to help developers manage or maintain their Auth0 implementations.
 
+# Test Sample App 
+
+[Sample App Hosted On Netlify](https://auth0-rules-test-ahsu.netlify.app/)
+
+Please try out a deployed sample app with the following credentials:
+  * Email: tester123@tester.test
+  * Password: tester123!@#
+  
+Logging in with different accounts, Google accounts, or creating new accounts should say you did not successfully log in because only the tester123 user is whitelisted.
+
 # Technology Stack
 
 Main stack - React (using React hooks) and Javascript
