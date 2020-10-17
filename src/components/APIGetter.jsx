@@ -27,7 +27,6 @@ export default class RulesGetter extends Component {
   initialize = async () => {
     try {
       const accessToken = await this.getAPIToken()
-      this.setStateAs('Successfully received API JWT', 'errorText')
 
       const rules = await this.getFromAPI(accessToken, 'rules')
       this.setStateAs(rules, 'ruleList')
