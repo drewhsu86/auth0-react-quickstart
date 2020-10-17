@@ -14,7 +14,7 @@ export default function RulesViewer() {
   if (!isAuthenticated) {
     return <div>
       <h1>You did not successfully Login.</h1>
-      <Link to="/" onClick={() => logout({ returnTo: 'http://localhost:3000' })}>
+      <Link to="/" onClick={() => logout({ returnTo: process.env.NODE_ENV === "production" ? "https://auth0-rules-test-ahsu.netlify.app" : "http://localhost:3000" })}>
           Return to Login Screen
       </Link>
     </div>
