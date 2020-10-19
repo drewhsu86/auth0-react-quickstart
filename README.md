@@ -66,6 +66,9 @@ All the following info can be found in your dashboard > applications > select on
   * REACT_APP_AUTH0API_CLIENTID=client id of your machine to machine application
   * REACT_APP_AUTH0API_CLIENTSECRET=client secret of your machine to machine application
 
+## Run Command 
+
+Use 'npm run start' or 'npm start' to start the React app. It typically runs on port 3000, so go to localhost:3000 on your browser if React does not redirect you there.
 
 
 
