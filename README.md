@@ -6,7 +6,7 @@ This React app implements Auth0's authentication system to allow only users on a
 
 ## App Structure 
 
-Please see this [diagram](https://raw.githubusercontent.com/drewhsu86/auth0-react-ruleviewer/master/src/images/Auth0-AppDiagram.png) of the general app structure. The app in this repository is only a frontend React app, but this structure can also be implemented with a full stack app, where the backend interacts with Auth0's management API.
+Please see this [diagram](https://raw.githubusercontent.com/drewhsu86/auth0-react-ruleviewer/master/src/images/Auth0-applDiagram.png) of the general app structure. The app in this repository is only a frontend React app, but this structure can also be implemented with a full stack app, where the backend interacts with Auth0's management API.
 
 ## Test Sample App 
 
@@ -75,6 +75,8 @@ All the following info can be found in your dashboard > applications > select on
 ## Run Command 
 
 Use 'npm run start' or 'npm start' to start the React app. It typically runs on port 3000, so go to localhost:3000 on your browser if React does not redirect you there.
+
+  * Note: When testing locally on Chrome I had to turn on my Chrome CORS add=on.
 
 
 
