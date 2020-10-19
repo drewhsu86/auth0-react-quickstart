@@ -85,8 +85,34 @@ export default class RulesGetter extends Component {
         <h1>Apps List:</h1>
         {
           this.state.appList.map((app, idx) => {
+            // find rules in ruleList that contain the name of this app 
+            // create an array to store them and display this array within the returned div 
+            // avoid removing the rules from ruleList in case it makes future renders fail, but makes this total operation O(n*m)
+            // n = array of apps, m = array of rules 
+            const relevantRules = []
+
+            this.state.ruleList.forEach((rule) => {
+              if (rule.script.includes(app.name)) {
+                relevantRules.push(rule)
+              }
+            })
+
             return <div key={idx} style={{ border: "1px solid black", padding: "10px", margin: "0 20%" }}>
               <h2> {app.name} </h2>
+
+              <h4>Relevant Rules List:</h4>
+              {
+                relevantRules.length > 0 ? relevantRules.map(rule => {
+                  return <div key={rule.id} style={{ border: "1px solid black", padding: "10px", margin: "0 20%" }}>
+                    <h2> {rule.name} </h2>
+                    <p>Order: {rule.order}</p>
+                    <p>Stage: {rule.stage}</p>
+                    <p style={{ overflow: "auto", backgroundColor: "lightgray", width: "80%", height: "50px", margin: "auto", padding: "5px" }}>
+                      {rule.script}
+                    </p>
+                  </div>
+                }) : 'No rules applied to this app.'
+              }
             </div>
           })
         }
