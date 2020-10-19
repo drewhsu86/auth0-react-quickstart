@@ -117,7 +117,7 @@ export default class RulesGetter extends Component {
           })
         }
 
-        <h1>Rules List:</h1>
+        <h1>Account-wide Rules List:</h1>
         {
           this.state.ruleList.map(rule => {
             return <div key={rule.id} style={{ border: "1px solid black", padding: "10px", margin: "0 20%" }}>
