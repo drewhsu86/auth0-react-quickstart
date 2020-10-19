@@ -78,6 +78,9 @@ export default class RulesGetter extends Component {
   }
   
   render() {
+    // make copy of rulesList so we can destroy this copy
+    const ruleListCopy = this.state.ruleList.slice()
+
     return (
       <div>
         {this.state.errorText ? <h3>{this.state.errorText}</h3> : null}
@@ -87,15 +90,18 @@ export default class RulesGetter extends Component {
           this.state.appList.map((app, idx) => {
             // find rules in ruleList that contain the name of this app 
             // create an array to store them and display this array within the returned div 
-            // avoid removing the rules from ruleList in case it makes future renders fail, but makes this total operation O(n*m)
-            // n = array of apps, m = array of rules 
+            // remove rules so total number of searches is O(n), n = number of rules
             const relevantRules = []
 
-            this.state.ruleList.forEach((rule) => {
-              if (rule.script.includes(app.name)) {
-                relevantRules.push(rule)
+            let i = 0;
+            while (i < ruleListCopy.length) {
+              if (ruleListCopy[i].script.includes(app.name)) {
+                relevantRules.push(ruleListCopy[i])
+                ruleListCopy.splice(i,1)
+              } else {
+                i++
               }
-            })
+            }
 
             return <div key={idx} style={{ border: "1px solid black", padding: "10px", margin: "0 20%" }}>
               <h2> {app.name} </h2>
@@ -119,7 +125,7 @@ export default class RulesGetter extends Component {
 
         <h1>Account-wide Rules List:</h1>
         {
-          this.state.ruleList.map(rule => {
+          ruleListCopy.length > 0 ? ruleListCopy.map(rule => {
             return <div key={rule.id} style={{ border: "1px solid black", padding: "10px", margin: "0 20%" }}>
               <h2> {rule.name} </h2>
               <p>Order: {rule.order}</p>
@@ -128,7 +134,7 @@ export default class RulesGetter extends Component {
                 {rule.script}
               </p>
             </div>
-          })
+          }) : 'No Account-wide Rules Found'
         }
       </div>
     )
