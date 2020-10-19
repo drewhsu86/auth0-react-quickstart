@@ -15,6 +15,7 @@ Logging in with different accounts, Google accounts, or creating new accounts sh
 # Technology Stack
 
 Main stack - React (using React hooks) and Javascript
+
 Packages (npm)
   * react-router-dom
   * @auth0/auth0-react
