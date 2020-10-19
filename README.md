@@ -76,7 +76,7 @@ All the following info can be found in your dashboard > applications > select on
 
 Use 'npm run start' or 'npm start' to start the React app. It typically runs on port 3000, so go to localhost:3000 on your browser if React does not redirect you there.
 
-  * Note: When testing locally on Chrome I had to turn on my Chrome CORS add=on.
+  * Note: When testing locally on Chrome I had to turn on my Chrome CORS add-on.
 
 
 
