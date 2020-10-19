@@ -1,8 +1,14 @@
 # Viewer for Apps and Rules on your Auth0 account
 
+## Summary
+
 This React app implements Auth0's authentication system to allow only users on a whitelist to log in. The users who have logged in will then see a list of the apps and rules active on this particular Auth0 account. By filtering and manipulating the data, large sets of rules and applications may be sorted or visualized to help developers manage or maintain their Auth0 implementations.
 
-# Test Sample App 
+## App Structure 
+
+Please see this [diagram]().
+
+## Test Sample App 
 
 [Sample App Hosted On Netlify](https://auth0-rules-test-ahsu.netlify.app/)
 
